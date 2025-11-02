@@ -78,13 +78,14 @@ WSGI_APPLICATION = 'alx_backend_caching_property_listings.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'propertydb',        # matches POSTGRES_DB
-        'USER': 'propertyuser',      # matches POSTGRES_USER
-        'PASSWORD': 'propertypass',  # matches POSTGRES_PASSWORD
-        'HOST': 'postgres',         # host machine
-        'PORT': '5432',              # mapped port
+        'NAME': 'propertydb',
+        'USER': 'propertyuser',
+        'PASSWORD': 'propertypass',
+        'HOST': 'postgres',  # matches service name in docker-compose
+        'PORT': '5432',
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

@@ -10,3 +10,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy project files
 COPY . /app/
+
+COPY wait-for-postgres.sh /wait-for-postgres.sh
+RUN chmod +x /wait-for-postgres.sh
