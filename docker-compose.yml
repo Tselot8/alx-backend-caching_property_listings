@@ -1,7 +1,6 @@
 services:
   web:
     build: .
-    container_name: property_web
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/app
@@ -15,7 +14,6 @@ services:
 
   postgres:
     image: postgres:latest
-    container_name: property_postgres
     environment:
       POSTGRES_USER: propertyuser
       POSTGRES_PASSWORD: propertypass
@@ -29,14 +27,16 @@ services:
 
   redis:
     image: redis:latest
-    container_name: property_redis
     ports:
       - "6379:6379"
+    volumes:
+      - redis_data:/data
     networks:
       - property_network
 
 volumes:
   postgres_data:
+  redis_data:
 
 networks:
   property_network:
